@@ -10,6 +10,8 @@ pipeline {
              '''
              }
     }
+    parallel {
+    stages ('deploy') {
     stage ('deploy1') {
     agent {label 'java'}
        steps {
@@ -27,6 +29,8 @@ pipeline {
                   sleep 2
              '''
              }
+    }
+    }
     }
     stage ('test') {
     agent {label 'cprog'}
