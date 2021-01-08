@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage ('build') {
        steps {
-       agent java
+       agent { label 'java' }
           sh '''
                   echo "this is build stage"
                   sleep 2
@@ -35,7 +35,7 @@ pipeline {
     }
     stage ('test') {
        steps {
-       agent cprog
+       agent {label 'cprog' }
           sh '''
                   echo "this is deploy stage"
                   sleep 2
