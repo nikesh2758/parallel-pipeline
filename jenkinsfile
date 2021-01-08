@@ -10,7 +10,7 @@ pipeline {
              '''
              }
     }
-    stages ('deploy') {
+    stage ('deploy') {
     parallel {
     stage ('deploy1') {
     agent {label 'java'}
