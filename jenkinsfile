@@ -1,9 +1,9 @@
 pipeline {
-  agent none
+  agent all
   stages {
     stage ('build') {
        steps {
-       agent { label 'java' }
+      # agent { label 'java' }
           sh '''
                   echo "this is build stage"
                   sleep 2
@@ -15,7 +15,7 @@ pipeline {
 
     stage ('deploy1') {
        steps {
-       agent master
+      # agent master
           sh '''
                   echo "this is deploy stage"
                   sleep 2
@@ -24,7 +24,7 @@ pipeline {
     }
     stage ('deploy2') {
        steps {
-       agent master
+           #agent master
           sh '''
                   echo "this is deploy stage"
                   sleep 2
@@ -35,7 +35,7 @@ pipeline {
     }
     stage ('test') {
        steps {
-       agent {label 'cprog' }
+     #  agent {label 'cprog' }
           sh '''
                   echo "this is deploy stage"
                   sleep 2
